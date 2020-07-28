@@ -20,7 +20,6 @@ class ExceptionsTest {
 			vars[4] = 5;
 			fail("IndexOutOfBoundsException not thrown");
 		}catch(IndexOutOfBoundsException e) {
-			e.printStackTrace();
 			assertArrayEquals(vars, new int[] {4, 1, 2, 3});
 		}
 	}
@@ -32,6 +31,15 @@ class ExceptionsTest {
 	//3. Complete the JUnit test method to test the divide method.
 	@Test
 	public void testDivideByZeroException() {
+		assertEquals(3, ExceptionMethods.divide(27.0,9.0));
+		try {
+			ExceptionMethods.divide(99.0, 0);
+			fail("IllegalArgumentException not thrown");
+		}
+		catch (IllegalArgumentException e) {
+			System.out.println("Gaby you are the most amazing man in the entire world");
+			assertEquals(1,ExceptionMethods.divide(1,1));
+		}
 		
 	}
 	
@@ -42,7 +50,15 @@ class ExceptionsTest {
 	//5. Complete the JUnit test method to test the reverseStringMethod.
 	@Test
 	public void testReverseString() {
-		
+		assertEquals("iyDympUsitahW", ExceptionMethods.reverseString("WhatisUpmyDyi"));
+		try {
+			ExceptionMethods.reverseString("");
+			fail("IllegalStateException not thrown");
+		}
+		catch (IllegalStateException e) {
+			System.out.println("If man is all with moral and might there are no man alive today");
+			assertEquals("a", ExceptionMethods.reverseString("a"));
+		}
 	}
 	
 	
